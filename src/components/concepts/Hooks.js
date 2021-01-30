@@ -15,19 +15,15 @@ const Hooks = () => {
 
   return (
     <div className="main">
-         
       <div className="mainDiv">
-            
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="enter your star wars character number"
         />
-            <button onClick={() => fetcher()}>Click for Character!</button>
-            {results ? <h2>{results.name}</h2> : <div></div>}
-           
+        <button onClick={() => fetcher()}>Click for Character!</button>
+        {results ? <h2>{results.name}</h2> : <div></div>}
       </div>
-        
     </div>
   );
 };
@@ -38,23 +34,18 @@ const Hooks2 = () => {
 
   return (
     <div className="main">
-         
       <div className="mainDiv">
-            <h3>Enter a number below to see a number fact.</h3>
-            
+        <h3>Enter a number below to see a number fact.</h3>
         <input
           value={queryNum}
           onChange={(e) => setQueryNum(e.target.value)}
           placeholder="enter a number"
         />
-            {results ? <h2>{results}</h2> : <div></div>}
-            
+        {results ? <h2>{results}</h2> : <div></div>}
         <button onClick={() => setClicks(clicks + 1)}>
           Click to update document title
         </button>
-           
       </div>
-        
     </div>
   );
 };
@@ -83,6 +74,7 @@ const useClicks = (initCount) => {
   useEffect(() => {
     document.title = `You have clicked ${clicks} times`;
   }, [clicks]);
+
   return [clicks, setClicks];
 };
 
